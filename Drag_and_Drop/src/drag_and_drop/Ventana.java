@@ -15,7 +15,7 @@ public class Ventana extends javax.swing.JFrame {
     }
 
     private String user_ = "Eduardo";
-    ListaSimple_Usuarios usuarios = new ListaSimple_Usuarios();
+    public ListaSimple_Usuarios usuarios = new ListaSimple_Usuarios();
     private String contrasenia_ = "gatitos93";
 
     @SuppressWarnings("unchecked")
@@ -144,9 +144,9 @@ public class Ventana extends javax.swing.JFrame {
         if(txt_user.getText().isEmpty() || txt_password.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Por favor no dejar los campos requeridos en blanco");
         }else if(usuarios.siexiste(txt_password.getText())){
+            JOptionPane.showMessageDialog(null, "Bienvenido, "+usuarios.Datos(txt_password.getText()).getName()+" acabas de iniciar sesion");
             txt_user.setText("");
             txt_password.setText("");
-            JOptionPane.showMessageDialog(null, "Bienvenido, acabas de iniciar sesion");
         }else{
             txt_user.setText("");
             txt_password.setText("");
